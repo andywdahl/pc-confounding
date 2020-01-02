@@ -1,4 +1,4 @@
-# R scripts exploring conditioning on gene expression PCs
+# R scripts to evaluate conditioning on gene expression PCs
 
 Simulation code for Dahl et al 2019 Genetics:
 
