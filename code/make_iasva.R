@@ -5,18 +5,18 @@ library(iasva)
 # iasva.res<- iasva(t(counts), mod[,-1],verbose=FALSE, num.sv=5)
 # I've not removed the intercept though
 
-make_iasva <- function(expr,K,X,long=F){
+make_iasva <- function(expr, K, X, long=F){
 
-	mod		<- model.matrix(~1+X)
-	if( long ){
-		out	<- iasva( expr, mod,	num.sv=K, B=50 )
+	mod	<- model.matrix(~1+X)
+	if (long){
+		out	<- iasva(expr, mod, num.sv=K, B=50 )
 	} else {
-		out	<- iasva( expr, mod,	num.sv=K )
+		out	<- iasva(expr, mod, num.sv=K )
 	}
 
 	svs	<- out$sv
-	if( all( svs == 0 ) & is.null(dim(svs)) )
-		return( NA )
+	if (all(svs == 0) & is.null(dim(svs)))
+		return(NA)
 
 	svs
 
